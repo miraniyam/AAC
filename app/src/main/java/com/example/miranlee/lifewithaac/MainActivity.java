@@ -11,6 +11,4 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Life");
     }
-
-    // 팀플 화이팅
 }
