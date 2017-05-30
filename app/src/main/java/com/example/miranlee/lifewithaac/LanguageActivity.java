@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by sungd on 2017-05-24.
+ * Created by sungd on 2017-05-28.
  */
 
-public class ClothActivity extends Activity {
-    @Override
+public class LanguageActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_cloth);
-        setTitle("cloth");
+        setContentView(R.layout.activity_language);
+        setTitle("language");
         super.onCreate(savedInstanceState);
     }
 }

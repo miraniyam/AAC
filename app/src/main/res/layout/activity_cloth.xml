@@ -2,9 +2,194 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </HorizontalScrollView>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.example.miranlee.lifewithaac.MainActivity"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pants"/>
+
+        <ImageButton
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pants"/>
+
+        <ImageButton
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pants"/>
+
+        </LinearLayout>
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.miranlee.lifewithaac.MainActivity"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <Button
+            android:layout_margin="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="RadioButton"
+            android:background="#f11010"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="RadioButton"
+            android:background="#ec6f01"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="RadioButton"
+            android:background="#f9fd07"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="RadioButton"
+            android:background="#00ff00"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="RadioButton"
+            android:background="#0415ff"/>
+
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context="com.example.miranlee.lifewithaac.MainActivity"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:layout_margin="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="1"
+                    android:background="#f11010"/>
+
+                <Button
+                    android:layout_margin="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="2"
+                    android:background="#ec6f01"/>
+
+                <Button
+                    android:layout_margin="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="3"
+                    android:background="#f9fd07"/>
+
+                <Button
+                    android:layout_margin="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="4"
+                    android:background="#00ff00"/>
+
+                <Button
+                    android:layout_margin="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="5"
+                    android:background="#0415ff"/>
+
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:context="com.example.miranlee.lifewithaac.MainActivity"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_margin="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="XS"
+                        android:background="#f11010"/>
+
+                    <Button
+                        android:layout_margin="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="S"
+                        android:background="#ec6f01"/>
+
+                    <Button
+                        android:layout_margin="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="M"
+                        android:background="#f9fd07"/>
+
+                    <Button
+                        android:layout_margin="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="L"
+                        android:background="#00ff00"/>
+
+                    <Button
+                        android:layout_margin="15dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:text="XL"
+                        android:background="#0415ff"/>
+
+                    </LinearLayout>
+
+                <ImageButton
+                    android:layout_width="250dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"/>
+
+                    <Button
+                        android:layout_width="250dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:text="말하기"
+                        />
+
+
+
+
 </LinearLayout>

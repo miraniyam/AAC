@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ClothActivity"/>
+        <activity android:name=".EmotionActivity"/>
+        <activity android:name=".HospitalActivity"/>
+        <activity android:name=".LanguageActivity"/>
+        <activity android:name=".RestaurantActivity"/>
+        <activity android:name=".SosActivity"/>
     </application>
 
 </manifest>

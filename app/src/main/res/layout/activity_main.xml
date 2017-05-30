@@ -32,7 +32,8 @@
             android:background="#5b9bd5"
             android:scaleType="fitCenter"
              android:src="@drawable/cloth"
-            />
+            android:layout_margin="20dp"
+            android:onClick="onRestaurantClick"/>
 
         </LinearLayout>
 
@@ -40,28 +41,49 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <ImageButton
-            android:layout_width="400dp"
-            android:layout_height="400dp" />
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#f1890b"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cloth"
+            android:layout_margin="20dp"
+            android:onClick="onEmotionClick"/>
 
         <ImageButton
-            android:layout_width="400dp"
-            android:layout_height="400dp" />
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="#ff0101"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cloth"
+            android:layout_margin="20dp"
+            android:onClick="onHospitalClick"/>
 
     </LinearLayout>
 
 
     <ImageButton
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        />
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:background="#815b5b"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cloth"
+        android:onClick="onSosClick"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"/>
 
     <ImageButton
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        />
+        android:layout_margin="10dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:background="#61799e"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cloth"
+        android:onClick="onLanguageClick"
+        android:layout_gravity="center"/>
 </LinearLayout>
