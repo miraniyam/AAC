@@ -3,38 +3,82 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:fadeScrollbars="false">
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.miranlee.lifewithaac.MainActivity"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cloth"
+                android:background="#00ff0000"
+                android:onClick="onTshirtClick"/>
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pants"
+                android:background="#00ff0000"
+                android:onClick="onPantsClick"/>
 
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/skirt"
+                android:background="#00ff0000"
+                android:onClick="onSkirtClick"/>
+
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/shirt"
+                android:background="#00ff0000"
+                android:onClick="onShirtClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dress"
+                android:background="#00ff0000"
+                android:onClick="onDressClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/underwear"
+                android:background="#00ff0000"
+                android:onClick="onUnderwearClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/socks"
+                android:background="#00ff0000"
+                android:onClick="onSocksClick"/>
         </LinearLayout>
 
+    </HorizontalScrollView>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -175,11 +219,10 @@
 
                     </LinearLayout>
 
-                <ImageButton
-                    android:layout_width="250dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="#ffffff"/>
 
                     <Button
                         android:layout_width="250dp"
