@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.miranlee.lifewithaac">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera2"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.RECORDER_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,8 +26,9 @@
         <activity android:name=".EmotionActivity"/>
         <activity android:name=".HospitalActivity"/>
         <activity android:name=".LanguageActivity"/>
-        <activity android:name=".RestaurantActivity"/>
+        <activity android:name=".CustomActivity"/>
         <activity android:name=".SosActivity"/>
+        <activity android:name=".CustomPlusActivity"/>
     </application>
 
 </manifest>
