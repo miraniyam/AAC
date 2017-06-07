@@ -91,5 +91,17 @@
         android:id="@+id/addbtn"
         android:text="add"
         android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="text"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:layout_marginBottom="5dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gettxt"/>
 
 </LinearLayout>
