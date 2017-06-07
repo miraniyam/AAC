@@ -3,42 +3,150 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context="com.example.miranlee.lifewithaac.MainActivity"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:weightSum="1">
+
+
 
         <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
             android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            android:src="@drawable/angry"
+            android:layout_weight="0.46"
+            android:onClick="onangryClick"/>/>
 
         <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
             android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            android:src="@drawable/bashful"
+            android:onClick="onbashfulClick"/>/>
 
         <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
             android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            android:src="@drawable/ghost"
+            android:onClick="onghostClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/happy"
+            android:onClick="onhappyClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/love"
+            android:onClick="onloveClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/numb"
+            android:onClick="onnumbClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pleased"
+            android:onClick="onpleasedClick"/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/sad"
+            android:onClick="onsadClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/shock"
+            android:onClick="onshockClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/unhappy"
+            android:onClick="onunhappyClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/unsure"
+            android:onClick="onunsureClick"/>/>
+
+        <ImageButton
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ffffff"
+            android:scaleType="fitCenter"
+            android:src="@drawable/upset"
+            android:onClick="onupsetClick"/>
+           />
+
 
     </LinearLayout>
-
+    </HorizontalScrollView>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,140 +154,14 @@
         android:orientation="horizontal"
         android:gravity="center">
 
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
     </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
-    </LinearLayout>
-
-    <ImageButton
+    <TextView
+        android:id="@+id/see"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp" />
 
     <Button
         android:layout_width="250dp"
