@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void onRestaurantClick(View view) {
-        Intent i = new Intent(this, RestaurantActivity.class);
+        Intent i = new Intent(this, CustomActivity.class);
         startActivity(i);
     }
     public void onSosClick(View view) {
