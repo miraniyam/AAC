@@ -3,38 +3,82 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:fadeScrollbars="false">
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.miranlee.lifewithaac.MainActivity"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/cloth"
+                android:background="#00ff0000"
+                android:onClick="onTshirtClick"/>
 
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pants"
+                android:background="#00ff0000"
+                android:onClick="onPantsClick"/>
 
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/skirt"
+                android:background="#00ff0000"
+                android:onClick="onSkirtClick"/>
+
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/shirt"
+                android:background="#00ff0000"
+                android:onClick="onShirtClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/dress"
+                android:background="#00ff0000"
+                android:onClick="onDressClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/underwear"
+                android:background="#00ff0000"
+                android:onClick="onUnderwearClick"/>
+            <ImageButton
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/socks"
+                android:background="#00ff0000"
+                android:onClick="onSocksClick"/>
         </LinearLayout>
 
+    </HorizontalScrollView>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -47,39 +91,44 @@
             android:gravity="center">
 
         <Button
+            android:id="@+id/red"
             android:layout_margin="15dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
+            android:background="#f11010"
+            android:onClick="onRedClick"/>
 
         <Button
+            android:id="@+id/orange"
             android:layout_margin="15dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
+            android:background="#ec6f01"
+            android:onClick="onOrangeClick"/>
 
         <Button
+            android:id="@+id/yellow"
             android:layout_margin="15dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
+            android:background="#f9fd07"
+            android:onClick="onYellowClick"/>
 
         <Button
+            android:id="@+id/green"
             android:layout_margin="15dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
+            android:background="#00ff00"
+            android:onClick="onGreenClick"/>
 
         <Button
+            android:id="@+id/blue"
             android:layout_margin="15dp"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
+            android:background="#0415ff"
+            android:onClick="onBlueClick"/>
 
             </LinearLayout>
 
@@ -93,100 +142,128 @@
                 android:gravity="center">
 
                 <Button
+                    android:padding="5dp"
+                    android:textSize="18dp"
                     android:layout_margin="15dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:text="1"
-                    android:background="#f11010"/>
+                    android:background="#00ff0000"
+                    android:onClick="onOneClick"/>
 
                 <Button
+                    android:padding="5dp"
+                    android:textSize="18dp"
                     android:layout_margin="15dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:text="2"
-                    android:background="#ec6f01"/>
+                    android:background="#00ff0000"
+                    android:onClick="onTwoClick"/>
 
                 <Button
+                    android:padding="5dp"
+                    android:textSize="18dp"
                     android:layout_margin="15dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:text="3"
-                    android:background="#f9fd07"/>
+                    android:background="#00ff0000"
+                    android:onClick="onThreeClick"/>
 
                 <Button
+                    android:padding="5dp"
+                    android:textSize="18dp"
                     android:layout_margin="15dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:text="4"
-                    android:background="#00ff00"/>
+                    android:background="#00ff0000"
+                    android:onClick="onFourClick"/>
 
                 <Button
+                    android:padding="5dp"
+                    android:textSize="18dp"
                     android:layout_margin="15dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:text="5"
-                    android:background="#0415ff"/>
+                    android:background="#00ff0000"
+                    android:onClick="onFiveClick"/>
 
                 </LinearLayout>
 
-                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    xmlns:tools="http://schemas.android.com/tools"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:context="com.example.miranlee.lifewithaac.MainActivity"
                     android:orientation="horizontal"
                     android:gravity="center">
 
                     <Button
-                        android:layout_margin="15dp"
-                        android:layout_width="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:padding="5dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="XS"
-                        android:background="#f11010"/>
+                        android:text="제일 작은"
+                        android:background="#00ff0000"
+                        android:textSize="15dp"
+                        android:onClick="onXSClick"/>
 
                     <Button
-                        android:layout_margin="15dp"
-                        android:layout_width="30dp"
+                        android:padding="5dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="S"
-                        android:background="#ec6f01"/>
+                        android:text="작은"
+                        android:background="#00ff0000"
+                        android:textSize="15dp"
+                        android:onClick="onSClick"/>
 
                     <Button
-                        android:layout_margin="15dp"
-                        android:layout_width="30dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="M"
-                        android:background="#f9fd07"/>
+                        android:text="중간"
+                        android:background="#00ff0000"
+                        android:padding="5dp"
+                        android:textSize="15dp"
+                        android:onClick="onMClick"/>
 
                     <Button
-                        android:layout_margin="15dp"
-                        android:layout_width="30dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="L"
-                        android:background="#00ff00"/>
+                        android:text="큰"
+                        android:background="#00ff0000"
+                        android:padding="5dp"
+                        android:textSize="15dp"
+                        android:onClick="onLClick"/>
 
                     <Button
-                        android:layout_margin="15dp"
-                        android:layout_width="30dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="30dp"
-                        android:text="XL"
-                        android:background="#0415ff"/>
+                        android:text="제일 큰"
+                        android:background="#00ff0000"
+                        android:padding="5dp"
+                        android:textSize="15dp"
+                        android:onClick="onXLClick"/>
 
                     </LinearLayout>
 
-                <ImageButton
-                    android:layout_width="250dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"/>
+                <TextView
+                    android:id="@+id/ClothTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:background="#ffffff"/>
 
                     <Button
+                        android:onClick="onSpeakClick"
                         android:layout_width="250dp"
                         android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
                         android:text="말하기"
+                        android:textSize="20dp"
                         />
 
 
