@@ -8,7 +8,11 @@
     <uses-feature android:name="android.hardware.camera"/>
     <uses-permission android:name="android.permission.RECORDER_AUDIO"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
