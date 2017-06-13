@@ -14,11 +14,13 @@ public class EmotionActivity extends Activity implements TextToSpeech.OnInitList
     TextView tv;
     TextToSpeech tts;
     String nar = null;
+    String emo = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_emotion);
         setTitle("emotion");
         tts = new TextToSpeech(this, this);
+        tv = (TextView)findViewById(R.id.see);
         super.onCreate(savedInstanceState);
 
 
@@ -28,78 +30,106 @@ public class EmotionActivity extends Activity implements TextToSpeech.OnInitList
     public void onangryClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("angry");
-        nar = "화났어요";
+        emo = "화났어요";
+        nar = emo;
         onInit(0);
     }
     public void onbashfulClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("bashful");
-        nar = "부끄러워요";
+        emo = "부끄러워요";
+        nar = emo;
         onInit(0);
     }
     public void onghostClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("ghost");
-        nar = "오싹해요";
+        emo = "오싹해요";
+        nar = emo;
         onInit(0);
     }
     public void onhappyClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("happy");
-        nar = "행복해요";
+        emo = "행복해요";
+        nar = emo;
         onInit(0);
     }
     public void onunhappyClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("unhappy");
-        nar = "불행해요";
+        emo = "불행해요";
+        nar = emo;
         onInit(0);
     }
     public void onloveClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("love");
-        nar = "좋아해요";
+        emo = "좋아해요";
+        nar = emo;
         onInit(0);
     }
     public void onnumbClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("numb");
-        nar = "망연자실해요";
+        emo = "망연자실해요";
+        nar = emo;
         onInit(0);
     }
     public void onpleasedClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("pleased");
-        nar = "즐거워요";
+        emo = "즐거워요";
+        nar = emo;
         onInit(0);
     }
     public void onsadClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("sad");
-        nar = "우울해요";
+        emo = "우울해요";
+        nar = emo;
         onInit(0);
     }
     public void onshockClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("shock");
-        nar = "충격이에요";
+        emo = "충격이에요";
+        nar = emo;
         onInit(0);
     }
     public void onunsureClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("unsure");
-        nar = "자신이없어요";
+        emo = "자신이없어요";
+        nar = emo;
         onInit(0);
     }
     public void onupsetClick(View view) {
         tv=(TextView)findViewById(R.id.see);
         tv.setText("upset");
-        nar = "속상해요";
+        emo = "속상해요";
+        nar = emo;
         onInit(0);
+    }
+    public String setString() {
+        String s = emo;
+        if(emo!="") {
+            s = "저는 지금 " + s;
+        }
+        else
+        {   s= "이미지를 선택하여 문장을 생성하세요.";
+        }
+        return s;
+    }
+
+    public void onSpeakClick(View view){
+        nar = setString();
+            onInit(0);
     }
 
     @Override
     public void onInit(int i) {
+        tv.setText(nar);
         tts.speak(nar,TextToSpeech.QUEUE_FLUSH, null);
     }
 }
