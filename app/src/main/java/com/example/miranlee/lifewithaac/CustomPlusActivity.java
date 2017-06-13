@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.icu.text.SimpleDateFormat;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -17,10 +18,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,9 +38,15 @@ import java.util.jar.Manifest;
  */
 
 public class CustomPlusActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
-    private static final int FROM_CAMERA = 1;
-    private static final int FROM_ALBUM = 2;
+    //내용
+    String txt=null;
+    EditText editText;
+    long check=0;
+    //image
+    private static final int FROM_ALBUM = 1;
+    private static final int FROM_CAMERA = 2;
     ImageView imageView;
+    Bitmap photo;
 
     //record
     MediaRecorder recorder = new MediaRecorder();
@@ -50,11 +59,13 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
 
     String voiceStoragePath;
 
-    public static SimpleDateFormat format;
-    public static String date;
+    //추가
+    Button addbtn;
+    int result=0;
+
     static Random rnd = new Random();
     static final String AB="abcdefghijklmnopqrstuvwxyz";
-   // Button backbtn;
+
 
 
 
@@ -69,7 +80,7 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         init();
 
     }
-
+/*
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -77,26 +88,19 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
 
         }
     }
-
-
+*/
     void init() {
-        //사진가져오기 음성녹음
-        // 두개 디비에 저장
+        //추가
+        addbtn = (Button)findViewById(R.id.addbtn);
 
-        imageView = (ImageView)findViewById(R.id.showimg);
-        Button camerabtn = (Button)findViewById(R.id.camerabtn);
-        Button albumbtn = (Button)findViewById(R.id.albumbtn);
+        //내용기입
+        editText = (EditText)findViewById(R.id.gettxt);
 
-
-        //녹음기능 구현
-
-
-
+        //녹음
         startbtn = (Button)findViewById(R.id.recordstartbtn);
         stopbtn = (Button)findViewById(R.id.recordstopbtn);
         playbtn = (Button)findViewById(R.id.recordplaybtn);
 
-      //  backbtn = (Button)findViewById(R.id.btn_back);
         stopbtn.setEnabled(false);
         playbtn.setEnabled(false);
 
@@ -122,6 +126,11 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
+        //사진가져오기
+        imageView = (ImageView)findViewById(R.id.showimg);
+        Button camerabtn = (Button)findViewById(R.id.camerabtn);
+        Button albumbtn = (Button)findViewById(R.id.albumbtn);
+
         //카메라 사진찍기
         camerabtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,8 +142,8 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
                 intent.putExtra("crop","true");
                 intent.putExtra("aspectX",0);
                 intent.putExtra("aspect",0);
-                intent.putExtra("outputX",300);
-                intent.putExtra("outputY",300);
+                intent.putExtra("outputX",100);
+                intent.putExtra("outputY",100);
 
                 try{
                     intent.putExtra("return-data",true);
@@ -151,17 +160,15 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         albumbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent nintent = new Intent();
-                nintent.setType("image/*");
-                nintent.setAction(Intent.ACTION_GET_CONTENT);
+                Intent nintent = new Intent(Intent.ACTION_PICK);
+                nintent.setType(MediaStore.Images.Media.CONTENT_TYPE);
 
                 //이미지 자르기
                 nintent.putExtra("crop","true");
                 nintent.putExtra("aspectX",0);
                 nintent.putExtra("aspect",0);
-                nintent.putExtra("outputX",300);
-                nintent.putExtra("outputY",300);
+                nintent.putExtra("outputX",100);
+                nintent.putExtra("outputY",100);
 
                 try{
                     nintent.putExtra("return-data",true);
@@ -173,25 +180,44 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
+        //디비에 추가
+
+        addbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean con =false;
+
+                //여기에 디비에 넣는거 하고
+                txt=editText.getText().toString();
+                final MyAACHandler dbHandler = new MyAACHandler(getApplicationContext());
+                check = dbHandler.insert(voiceStoragePath,getBytes(photo),txt);    //이거 안되면 이미지도 경로저장도전..
+                //디비에 넣기 성공하면
+                if(check==1){
+                    Toast.makeText(getApplicationContext(), "추가했습니다!", Toast.LENGTH_SHORT).show();
+                    con = true;
+
+                }
+                    //이걸로 새로운거 만들라고 보내기
+                    Intent intent = new Intent();
+                    result = 1;
+                    intent.putExtra("result", result);
+
+                if(con)
+                    setResult(RESULT_OK,intent);    //된것
+                else
+                    setResult(RESULT_CANCELED,intent);//실패
+
+                finish();
+                //
+            }
+        });
+
+
     }
 
-    //
-
     public void onClickStart(View view) {
-       // tts.speak("이 멘트가 끝나면 녹음이 시작됩니다.",TextToSpeech.QUEUE_FLUSH,null);
+        tts.speak("이 멘트가 끝나면 녹음이 시작됩니다.",TextToSpeech.QUEUE_FLUSH,null);
         try {
-         /*   File sdir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "AAC");
-            //File sdir = new File(getApplicationContext().getFilesDir(),"AAC");
-            //boolean f = nfile.mkdirs();
-
-            if(!sdir.exists()){
-                if(!sdir.mkdirs()){
-                    Toast.makeText(getApplicationContext(),"글렀어",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-            }
-*/
             voiceStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath();
             File audioVoice = new File(voiceStoragePath+File.separator+"voice");
             if(!audioVoice.exists()){
@@ -217,19 +243,17 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
             //storagepath = sdir.getAbsolutePath().toString()+"/"+filename+".3gp";
 
             recorder.prepare();
-          //  while(tts.isSpeaking()) {
+            while(tts.isSpeaking()) {
                 // 안내 음성이 다 끝나고 나야 저장할 것이다!
-          //  }
+            }
             Toast.makeText(getApplicationContext(),"여기까지 오니.?1",Toast.LENGTH_SHORT).show();
-
             recorder.start();
             Toast.makeText(getApplicationContext(),"여기까지 오니.?2",Toast.LENGTH_SHORT).show();
 
             startbtn.setEnabled(false);
-            //backbtn.setEnabled(false);
 
             stopbtn.setEnabled(true);
-            Toast.makeText(getApplicationContext(),"여기까지 오니.?",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),"여기까지 오니.?",Toast.LENGTH_SHORT).show();
 
         }catch(Exception e) {
             e.printStackTrace();
@@ -246,7 +270,6 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
       //  backbtn.setEnabled(true);
     }
 
-    ///
     private void playLastStoredAudioMusic(){
         mediaPlayer = new MediaPlayer();
         try {
@@ -277,18 +300,7 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
             mediaPlayer = null;
         }
     }
-    /*
-    private String generateVoiceFilename(int len){ 
-        StringBuilder sb = new StringBuilder(len);
-        //StringBuilder sb = new StringBuilder(len); 
-        int i=0;
-        for(i=0;i<len;i++){ 
-            sb.append(AB.charAt(rnd.nextInt(AB.length()))); 
-        } 
-        return sb.toString(); 
-    }
 
-    */
     private String generateVoiceFilename(int len){
         StringBuilder sb = new StringBuilder(len);
         for(int i=0;i<len;i++){
@@ -296,20 +308,19 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         }
         return sb.toString();
     }
-    ///
 
     @Override
     public void onInit(int i) {
 
     }
 
-    //
+    //카메라..
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == FROM_CAMERA){
             Bundle extras = data.getExtras();
             if(extras != null) {
-                Bitmap photo = extras.getParcelable("data");
+                photo = extras.getParcelable("data");
                 imageView.setImageBitmap(photo);
             }
         }
@@ -317,10 +328,19 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         if(requestCode == FROM_ALBUM){
             Bundle extras = data.getExtras();
             if(extras != null){
-                Bitmap photo = extras.getParcelable("data");
+                photo = extras.getParcelable("data");
                 imageView.setImageBitmap(photo);
             }
         }
     }
+
+        // 비트맵이미지를 바이트어레이로 바꿔서 저장
+        public byte[] getBytes(Bitmap bitmap) {
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+            return stream.toByteArray();
+        }
+
+
 
 }
