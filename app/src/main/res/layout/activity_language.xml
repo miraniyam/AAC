@@ -6,23 +6,19 @@
 
 
     <Button
+        android:id="@+id/korean"
+        android:onClick="onClickKorean"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:text="Korean"/>
+        android:textSize="30dp"
+        android:text="한국어"/>
 
     <Button
+        android:id="@+id/english"
+        android:onClick="onClickEnglish"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:textSize="30dp"
         android:text="English"/>
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:text="Chinese"/>
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:text="Japanese"/>
 
 </LinearLayout>
