@@ -36,6 +36,9 @@
         <activity android:name=".CustomActivity"/>
         <activity android:name=".SosActivity"/>
         <activity android:name=".CustomPlusActivity"/>
+        <activity android:name=".LevelOneActivity"/>
+        <activity android:name=".LevelTwoActivity"/>
+        <activity android:name=".LevelThreeActivity"/>
     </application>
 
 </manifest>
