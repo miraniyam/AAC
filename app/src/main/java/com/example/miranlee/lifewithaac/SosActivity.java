@@ -78,11 +78,6 @@ public class SosActivity extends Activity implements LocationListener {
         init();
     }
 
-    //시간되면
-    //위치정보 받아와서 메세지에 주소 같이 첨부
-    //등록한 전화번호 삭제
-    //남은 경고는 조장님 부정적인 감정 여러번 누르면 메세지 보내는거하기~
-
     void init() {
 
 
@@ -181,8 +176,6 @@ public class SosActivity extends Activity implements LocationListener {
                         public void onClick(View view) {
                             //Toast.makeText(getApplicationContext(),selectname,Toast.LENGTH_SHORT).show();
                             //메세지 보내기 기능 구현
-                            /////+위치정보 전송하기//시간되면..
-
 
                             try {
                                 //37.5407625,127.0793428
@@ -214,10 +207,6 @@ public class SosActivity extends Activity implements LocationListener {
                             String contents = "주소: " + add + "\n 제가 지금 위험해요!";
                             Messenger messenger = new Messenger(getApplicationContext());
                             messenger.sendMessageTo(selectnumber, contents);
-
-                            //String geo1 = String.format("%.6f", lat);
-                            //String geo2 = String.format("%.6f", lon);
-                            //Toast.makeText(getApplicationContext(), geo1+" "+geo2, Toast.LENGTH_SHORT).show();
 
                         }
                     });

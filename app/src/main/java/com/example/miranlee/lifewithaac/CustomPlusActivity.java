@@ -80,15 +80,7 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         init();
 
     }
-/*
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch(requestCode){
 
-        }
-    }
-*/
     void init() {
         //추가
         addbtn = (Button)findViewById(R.id.addbtn);
@@ -223,37 +215,28 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
             if(!audioVoice.exists()){
                 audioVoice.mkdir();
                 if(!audioVoice.mkdir()){
-                    Toast.makeText(getApplicationContext(),"글렀어",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"저장에 실패했습니다",Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
 
             voiceStoragePath = voiceStoragePath+File.separator+"voice/"+generateVoiceFilename(5)+".3gpp";
-           // String filename = "hi";
 
-            Toast.makeText(getApplicationContext(),voiceStoragePath,Toast.LENGTH_SHORT).show();
-
-         //   Toast.makeText(getApplicationContext(),"file:"+filename,Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(),voiceStoragePath,Toast.LENGTH_SHORT).show();
 
             recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
             recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             recorder.setOutputFile(voiceStoragePath);
 
-            //storagepath = sdir.getAbsolutePath().toString()+"/"+filename+".3gp";
-
             recorder.prepare();
             while(tts.isSpeaking()) {
                 // 안내 음성이 다 끝나고 나야 저장할 것이다!
             }
-            Toast.makeText(getApplicationContext(),"여기까지 오니.?1",Toast.LENGTH_SHORT).show();
             recorder.start();
-            Toast.makeText(getApplicationContext(),"여기까지 오니.?2",Toast.LENGTH_SHORT).show();
 
             startbtn.setEnabled(false);
-
             stopbtn.setEnabled(true);
-            //Toast.makeText(getApplicationContext(),"여기까지 오니.?",Toast.LENGTH_SHORT).show();
 
         }catch(Exception e) {
             e.printStackTrace();

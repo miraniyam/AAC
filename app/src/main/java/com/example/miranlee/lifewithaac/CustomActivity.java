@@ -35,11 +35,6 @@ public class CustomActivity extends Activity{
     SQLiteDatabase db;
 
     GridAdapter adapter;
-    //final List<String> list = new ArrayList<String>();
-    //final ArrayAdapter<String> gridViewArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,list);
-    //ArrayList<Bitmap> photoArr = new ArrayList<Bitmap>();
-    //ArrayList<String>textArr= new ArrayList<String>();
-    //ArrayList<String>voiceArr=new ArrayList<String>();
 
     ArrayList<AAC> aac = new ArrayList<AAC>();
 
@@ -49,12 +44,6 @@ public class CustomActivity extends Activity{
         setTitle("myAAC");
         super.onCreate(savedInstanceState);
 
-
-        //리스트로.. 이미지나오게..?
-
-        //여기에서 디비 열어서 아이템하나씩 array에 추가 & 보여주기 터치하면 그거 음성나오는건 어케할까
-        //커스텀 리스트뷰 성공하고
-        //디비에 있는 사진이랑 음성 불러오기~ //음성은 터치시에 나오게!
         init();
 
     }
@@ -127,18 +116,10 @@ public class CustomActivity extends Activity{
             byte[] image = cursor.getBlob(1);//image
             String textt = cursor.getString(2);//text
 
-           // photoArr.add(getImage(image));
-           // textArr.add(textt);
-           // voiceArr.add(voice);
-
             adapter.ADDAAC(new AAC(textt,voice,getImage(image)));
         }
         cursor.close();
-       // gridViewArrayAdapter.notifyDataSetChanged();
-//        reviewAdapter.notifyDataSetChanged();
 
-        //
-        //imageView.setImageBitmap(getImage(image));
         adapter.notifyDataSetChanged();
 
     }
@@ -148,7 +129,4 @@ public class CustomActivity extends Activity{
         return BitmapFactory.decodeByteArray(image,0,image.length);
     }
 
-    //온클릭 달아서 누르면 소리나오게
-    //경로 가져와서 하기...
-    //play함수 응용
 }
