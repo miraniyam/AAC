@@ -200,48 +200,48 @@
                     android:gravity="center">
 
                     <Button
-                        android:layout_marginLeft="5dp"
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:id="@+id/extraSmall"
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:text="제일 작은"
                         android:background="#00ff0000"
                         android:textSize="15dp"
                         android:onClick="onXSClick"/>
 
                     <Button
-                        android:padding="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:id="@+id/small"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:text="작은"
                         android:background="#00ff0000"
                         android:textSize="15dp"
                         android:onClick="onSClick"/>
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:id="@+id/medium"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:text="중간"
                         android:background="#00ff0000"
-                        android:padding="5dp"
                         android:textSize="15dp"
                         android:onClick="onMClick"/>
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:id="@+id/big"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:text="큰"
                         android:background="#00ff0000"
-                        android:padding="5dp"
                         android:textSize="15dp"
                         android:onClick="onLClick"/>
 
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:id="@+id/extraBig"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
                         android:text="제일 큰"
                         android:background="#00ff0000"
-                        android:padding="5dp"
                         android:textSize="15dp"
                         android:onClick="onXLClick"/>
 
@@ -257,6 +257,7 @@
                     android:background="#ffffff"/>
 
                     <Button
+                        android:id="@+id/speak"
                         android:onClick="onSpeakClick"
                         android:layout_width="250dp"
                         android:layout_height="80dp"
