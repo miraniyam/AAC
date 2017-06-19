@@ -51,7 +51,6 @@ public class ClothActivity extends Activity implements TextToSpeech.OnInitListen
         lang = i.getStringExtra("lang");
         if(lang.equals("korean")) {
             type = 0;
-            tts.setLanguage(Locale.KOREAN);
 
             extraSmall.setText("제일 작은");
             small.setText("작은");
@@ -62,7 +61,6 @@ public class ClothActivity extends Activity implements TextToSpeech.OnInitListen
         }
         if(lang.equals("english")) {
             type = 1;
-            tts.setLanguage(Locale.ENGLISH);
 
             extraSmall.setText("Extra Small");
             small.setText("Small");
