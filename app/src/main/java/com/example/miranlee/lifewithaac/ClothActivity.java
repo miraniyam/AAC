@@ -1,10 +1,12 @@
 package com.example.miranlee.lifewithaac;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
