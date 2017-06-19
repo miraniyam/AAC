@@ -18,10 +18,12 @@ public class LevelOneActivity extends AppCompatActivity implements TextToSpeech.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level1);
         setTitle("Level 1");
         tts = new TextToSpeech(this, this);
-        super.onCreate(savedInstanceState);
+        nar = "숫자를 클릭해 보세요";
+        onInit(0);
     }
 
     public void onClick1(View v) {

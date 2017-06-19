@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void onHospitalClick(View view) {
-        Intent i = new Intent(this, HospitalActivity.class);
+        Intent i = new Intent(this, GameActivity.class);
         startActivity(i);
     }
     public void onLanguageClick(View view) {

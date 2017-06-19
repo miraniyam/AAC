@@ -138,8 +138,8 @@ public class SosActivity extends Activity implements LocationListener {
 
                         try {
                             //37.5407625,127.0793428
-//                          List<Address> addresses = geoCoder.getFromLocation(lat,lon,1);
-                            List<Address> addresses = geoCoder.getFromLocation(37.5407625,127.0793428,1);
+                          List<Address> addresses = geoCoder.getFromLocation(lat,lon,1);
+                           // List<Address> addresses = geoCoder.getFromLocation(37.5407625,127.0793428,1);
 
                             StringBuilder sb = new StringBuilder();
                             Address address = addresses.get(0);

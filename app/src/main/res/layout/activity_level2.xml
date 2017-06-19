@@ -1,19 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:id="@+id/question"
-        android:textSize="50dp"
-        android:background="#fbdf83"/>
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:background="#fbdf83"
+        android:text="고양이는 몇 마리 인가요?"/>
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="300dp"
+        android:src="@drawable/q1"
+        android:id="@+id/RandomImage"/>
 
-    </LinearLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadeScrollbars="false">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.example.miranlee.lifewithaac.MainActivity"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/one"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/one"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/two"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/two"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/three"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/three"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/four"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/four"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/five"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/five"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/six"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/six"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/seven"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/seven"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/eight"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/eight"
+                android:background="#00ff0000"/>
+
+            <ImageButton
+                android:id="@+id/nine"
+                android:layout_margin="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nine"
+                android:background="#00ff0000"/>
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </LinearLayout>

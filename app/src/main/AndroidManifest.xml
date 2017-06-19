@@ -31,7 +31,7 @@
         </activity>
         <activity android:name=".ClothActivity"/>
         <activity android:name=".EmotionActivity"/>
-        <activity android:name=".HospitalActivity"/>
+        <activity android:name=".GameActivity"/>
         <activity android:name=".LanguageActivity"/>
         <activity android:name=".CustomActivity"/>
         <activity android:name=".SosActivity"/>
