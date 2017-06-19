@@ -1,15 +1,24 @@
 package com.example.miranlee.lifewithaac;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,30 +30,39 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by sungd on 2017-05-28.
  */
 
-public class SosActivity extends Activity{
+public class SosActivity extends Activity implements LocationListener {
     Button addbutton;
     ListView listView;
     ListviewAdapter adapter;
-    String name=null;
-    String number=null;
+    String name = null;
+    String number = null;
 
     WarningDB warningDB;
     SQLiteDatabase db;
 
     //dialog
-    String selectname=null;
-    String selectnumber=null;
+    String selectname = null;
+    String selectnumber = null;
     ImageButton callbtn;
     ImageButton snsbtn;
 
     CustomDialog customDialog;
 
+    //위치받아오기
+    Location myLocation;
+    Geocoder geoCoder;
+    double lat;
+    double lon;
+    String add;
 
     ArrayList<SOS> sos = new ArrayList<SOS>();
 
@@ -52,6 +70,7 @@ public class SosActivity extends Activity{
         setContentView(R.layout.activity_sos);
         setTitle("sos");
         super.onCreate(savedInstanceState);
+
 
         init();
     }
@@ -61,12 +80,27 @@ public class SosActivity extends Activity{
     //등록한 전화번호 삭제
     //남은 경고는 조장님 부정적인 감정 여러번 누르면 메세지 보내는거하기~
 
-    void init(){
+    void init() {
 
-        listView = (ListView)findViewById(R.id.warninglist);
-        adapter = new ListviewAdapter(this,sos);
+
+        listView = (ListView) findViewById(R.id.warninglist);
+        adapter = new ListviewAdapter(this, sos);
         listView.setAdapter(adapter);
-
+//
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) this);
+        geoCoder = new Geocoder(this,Locale.KOREAN);
+//
 
         //오래누르면 삭제되게=>산협프 프로젝트 찾아보기
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -97,12 +131,44 @@ public class SosActivity extends Activity{
                 snsbtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getApplicationContext(),selectname,Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(),selectname,Toast.LENGTH_SHORT).show();
                         //메세지 보내기 기능 구현
                         /////+위치정보 전송하기//시간되면..
-                        String contents = "제가 지금 위험해요!";
+
+
+                        try {
+                            //37.5407625,127.0793428
+//                          List<Address> addresses = geoCoder.getFromLocation(lat,lon,1);
+                            List<Address> addresses = geoCoder.getFromLocation(37.5407625,127.0793428,1);
+
+                            StringBuilder sb = new StringBuilder();
+                            Address address = addresses.get(0);
+                            for(int i=0; i<address.getMaxAddressLineIndex();i++){
+                                sb.append(address.getAddressLine(i)).append("\n");
+                            }
+
+                            sb.append(address.getCountryName()).append(" ");//나라
+                            sb.append(address.getAdminArea()).append(" ");
+                            sb.append(address.getLocality()).append(" ");//시
+                            sb.append(address.getThoroughfare()).append(" ");   //동
+                            sb.append(address.getFeatureName()).append(" ");	// 번지
+
+                            add = sb.toString();
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        //
+                        String contents = "주소: "+ add +"\n 제가 지금 위험해요!";
                         Messenger messenger = new Messenger(getApplicationContext());
                         messenger.sendMessageTo(selectnumber,contents);
+
+                        //String geo1 = String.format("%.6f", lat);
+                        //String geo2 = String.format("%.6f", lon);
+                        //Toast.makeText(getApplicationContext(), geo1+" "+geo2, Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }
@@ -176,6 +242,28 @@ public class SosActivity extends Activity{
 
     }
 
+    @Override
+    public void onLocationChanged(Location location) {
+         lat = location.getLatitude();
+         lon = location.getLongitude();
+    }
+
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
+    }
+
+
     public class Messenger {
         private Context mContext;
 
@@ -189,6 +277,7 @@ public class SosActivity extends Activity{
             Toast.makeText(mContext,"전송되었습니다",Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 }
