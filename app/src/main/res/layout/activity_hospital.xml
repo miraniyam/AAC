@@ -3,193 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
-
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
-
-        <ImageButton
-            android:layout_margin="10dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pants"/>
-
-    </LinearLayout>
-
-
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context="com.example.miranlee.lifewithaac.MainActivity"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f11010"/>
-.
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#ec6f01"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#f9fd07"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#00ff00"/>
-
-        <Button
-            android:layout_margin="15dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:text="RadioButton"
-            android:background="#0415ff"/>
-
-    </LinearLayout>
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/one"
+        android:background="#84afdc"
+        android:onClick="onClickLevel1"/>
 
     <ImageButton
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"/>
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="말하기"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:background="#ffd96c"
+        android:src="@drawable/two"
+        android:onClick="onClickLevel2"/>
 
 
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:background="#f25f72"
+        android:src="@drawable/three"
+        android:onClick="onClickLevel3"/>
 
 
 </LinearLayout>
