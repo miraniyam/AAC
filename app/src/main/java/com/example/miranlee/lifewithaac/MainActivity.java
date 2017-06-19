@@ -81,11 +81,12 @@ public class MainActivity extends Activity {
         i.putExtra("lang",lang);
         startActivity(i);
     }
+
     public void onLanguageClick(View view) {
         Intent i = new Intent(this, LanguageActivity.class);
         i.putExtra("lang",lang);
         i.putExtra("path",path);
-        startActivity(i);
+        startActivityForResult(i,0);
     }
     public void onRestaurantClick(View view) {
         Intent i = new Intent(this, CustomActivity.class);
@@ -96,5 +97,13 @@ public class MainActivity extends Activity {
         Intent i = new Intent(this, SosActivity.class);
         i.putExtra("lang",lang);
         startActivity(i);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 0) {
+            finish();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

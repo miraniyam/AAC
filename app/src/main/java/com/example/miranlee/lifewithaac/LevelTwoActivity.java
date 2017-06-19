@@ -1,5 +1,6 @@
 package com.example.miranlee.lifewithaac;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 /**
  * Created by miran lee on 2017-06-19.
@@ -21,14 +24,30 @@ public class LevelTwoActivity extends AppCompatActivity implements TextToSpeech.
     String nar = null;
     int answer = -1;
 
+    String lang;
+    int type = -1;
+    TextView tv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tts = new TextToSpeech(this, this);
-        setTitle("Level 2");
+        setTitle("Level 3");
         setContentView(R.layout.activity_level2);
 
-        nar = "고양이는 몇 마리 인가요? 아래의 숫자를 선택해 보세요.";
+        tv = (TextView)findViewById(R.id.question);
+
+        Intent i = getIntent();
+        lang = i.getStringExtra("lang");
+        if(lang.equals("korean")) {
+            type = 0;
+            tv.setText("고양이는 몇 마리 인가요?");
+            nar = "고양이는 몇 마리 인가요? 아래의 숫자를 선택해 보세요.";
+        }else if(lang.equals("english")) {
+            type = 1;
+            tv.setText("How many cats?");
+            nar = "How many cats there? Choose number below.";
+        }
         onInit(0);
 
         im = (ImageView)findViewById(R.id.RandomImage);
@@ -41,110 +60,83 @@ public class LevelTwoActivity extends AppCompatActivity implements TextToSpeech.
                 switch (v.getId()) {
                     case R.id.one:
                         if(answer == 1) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.two:
                         if(answer == 2) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.three:
                         if(answer == 3) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.four:
                         if(answer == 4) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.five:
                         if(answer == 5) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.six:
                         if(answer == 6) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.seven:
                         if(answer == 7) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.eight:
                         if(answer == 8) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                     case R.id.nine:
                         if(answer == 9) {
-                            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
-                            answer = generateQ();
+                            correct();
                             // 정답
                         }else {
                             // 오답 - 다시 풀기
-                            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
-                            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+                            wrong();
                         }
                         break;
                 }
@@ -207,8 +199,36 @@ public class LevelTwoActivity extends AppCompatActivity implements TextToSpeech.
         // 1과 9 사이의 난수가 만들어 지고 그에 맞는 이미지 설정!
     }
 
+    public void correct() {
+        if(type == 0) {
+            tts.speak("정답입니다! 다른 문제도 맞춰보세요.",TextToSpeech.QUEUE_FLUSH,null);
+            Toast.makeText(getApplicationContext(), "정답입니다!",Toast.LENGTH_SHORT).show();
+        }else if(type == 1) {
+            tts.speak("Correct! Try another one.",TextToSpeech.QUEUE_FLUSH,null);
+            Toast.makeText(getApplicationContext(), "Correct!",Toast.LENGTH_SHORT).show();
+        }
+        answer = generateQ();
+    }
+
+    public void wrong() {
+        if(type == 0) {
+            tts.speak("오답입니다. 다시 풀어보세요.",TextToSpeech.QUEUE_FLUSH,null);
+            Toast.makeText(getApplicationContext(), "오답입니다. 다시 풀어보세요",Toast.LENGTH_SHORT).show();
+        }else if(type == 1) {
+            tts.speak("Wrong. Try again.",TextToSpeech.QUEUE_FLUSH,null);
+            Toast.makeText(getApplicationContext(), "Wrong. Try Again.",Toast.LENGTH_SHORT).show();
+        }
+    }
+
     @Override
     public void onInit(int status) {
+        if(type == 1) {
+            tts.setLanguage(Locale.ENGLISH);
+        }
+        if(type == 0) {
+            tts.setLanguage(Locale.KOREA);
+        }
+
         tts.speak(nar,TextToSpeech.QUEUE_FLUSH,null);
     }
 }
