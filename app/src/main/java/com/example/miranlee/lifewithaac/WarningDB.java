@@ -33,4 +33,10 @@ public class WarningDB extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM Warning;");
         db.close();
     }
+
+    public void numdelete(String name, String num) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM Warning WHERE name = '"+name+"' and number = '"+num+"';");
+        db.close();
+    }
 }

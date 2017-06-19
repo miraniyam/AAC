@@ -17,6 +17,12 @@ import java.io.FileWriter;
  */
 
 public class LanguageActivity extends Activity {
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+        super.onBackPressed();
+    }
 
     String lang = null;
     String path = null;
@@ -46,7 +52,7 @@ public class LanguageActivity extends Activity {
 
     public void onClickKorean(View v) {
         AlertDialog.Builder alert = new AlertDialog.Builder(LanguageActivity.this);
-        alert.setMessage("사용 언어를 한국어로 변환하시겠습니까?").setCancelable(true).setPositiveButton("확인", new DialogInterface.OnClickListener() {
+        alert.setMessage("사용 언어를 한국어로 변환하시겠습니까?").setCancelable(false).setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 File file = new File(path);
