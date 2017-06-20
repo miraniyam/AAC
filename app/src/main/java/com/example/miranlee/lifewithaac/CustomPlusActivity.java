@@ -208,7 +208,11 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         });
 
         //디비에 추가
-
+        if(type == 0) {
+            addbtn.setText("추가");
+        }else if(type == 1) {
+            addbtn.setText("ADD");
+        }
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
