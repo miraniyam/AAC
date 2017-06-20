@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+   >
 <!--
     <TextView
         android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
         android:textSize="15dp"
         android:layout_marginBottom="5dp"/>
     <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -33,15 +35,23 @@
         <!--카메라 찍기-->
         <Button
             android:layout_width="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_height="50dp"
             android:id="@+id/camerabtn"
             android:text="camera"
+            android:background="#FFD8D8"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="50dp"/>
         <!--앨범에서 가져오기-->
         <Button
+            android:layout_marginBottom="5dp"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/albumbtn"
+            android:layout_marginTop="5dp"
+            android:background="#FFD8D8"
+            android:layout_marginRight="10dp"
             android:text="album"/>
     </LinearLayout>
 
@@ -67,6 +77,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:id="@+id/gettxt"
         android:background="#ffffff"/>
 
@@ -93,31 +105,41 @@
             android:layout_height="50dp"
             android:id="@+id/recordstartbtn"
             android:text="start"
+            android:background="#FFD8D8"
             android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginTop="5dp"/>
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/recordstopbtn"
             android:text="stop"
+            android:background="#FFD8D8"
             android:layout_gravity="center"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            />
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/recordplaybtn"
             android:text="play"
+            android:background="#FFD8D8"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            />
     </LinearLayout>
     <Button
         android:layout_width="70dp"
         android:layout_height="40dp"
         android:id="@+id/addbtn"
         android:text="add"
-        android:background="#FFD9EC"
+        android:background="#F7CAC9"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"/>
 

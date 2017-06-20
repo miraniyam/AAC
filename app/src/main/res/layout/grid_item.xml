@@ -8,6 +8,7 @@
         android:layout_height="150dp"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:background="#F6F6f6"
         >
     <ImageView
         android:layout_width="130dp"

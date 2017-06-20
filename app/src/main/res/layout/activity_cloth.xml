@@ -7,7 +7,8 @@
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fadeScrollbars="false">
+        android:fadeScrollbars="false"
+        android:background="#ffffff">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,7 +17,8 @@
             android:layout_height="wrap_content"
             tools:context="com.example.miranlee.lifewithaac.MainActivity"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            >
 
             <ImageButton
                 android:layout_margin="10dp"
@@ -90,7 +92,9 @@
             tools:context="com.example.miranlee.lifewithaac.MainActivity"
             android:orientation="horizontal"
             android:gravity="center"
-        android:layout_marginTop="10dp">
+        android:background="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
 
         <Button
             android:id="@+id/red"
@@ -141,7 +145,9 @@
                 android:layout_height="wrap_content"
                 tools:context="com.example.miranlee.lifewithaac.MainActivity"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:background="#ffffff">
 
                 <Button
                     android:padding="5dp"
@@ -196,10 +202,12 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="#ffffff"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_marginBottom="5dp">
 
                     <Button
                         android:id="@+id/extraSmall"
@@ -266,7 +274,7 @@
                         android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:background="#FFD9EC"
+                        android:background="#F7CAC9"
                         android:text="말하기"
                         android:layout_marginTop="10dp"
                         android:textSize="20dp"
