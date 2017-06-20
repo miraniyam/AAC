@@ -17,7 +17,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:id="@+id/one"
             android:background="#00ff0000"
@@ -49,7 +50,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:id="@+id/four"
             android:background="#00ff0000"
@@ -81,7 +83,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:id="@+id/seven"
             android:background="#00ff0000"

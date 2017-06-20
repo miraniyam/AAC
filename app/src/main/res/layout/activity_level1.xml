@@ -6,7 +6,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:onClick="onClick1"
             android:background="#00ff0000"
@@ -38,7 +39,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:onClick="onClick4"
             android:background="#00ff0000"
@@ -70,7 +72,8 @@
     <LinearLayout
         android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="150dp"
+        android:layout_weight="1">
         <ImageButton
             android:onClick="onClick7"
             android:background="#00ff0000"

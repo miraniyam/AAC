@@ -12,25 +12,28 @@
         android:gravity="center"
         android:textColor="#000000"
         android:background="#d0fbd3"
-        android:text="게임 레벨을 선택하세요!"/>
+        android:text="게임 레벨을 선택하세요!"
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1">
         <ImageButton
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:scaleType="fitCenter"
             android:src="@drawable/one"
             android:background="#84afdc"
-            android:onClick="onClickLevel1"/>
+            android:onClick="onClickLevel1"
+            />
 
         <ImageButton
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:scaleType="fitCenter"
             android:background="#ffd96c"
             android:src="@drawable/two"
@@ -40,7 +43,7 @@
         <ImageButton
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:scaleType="fitCenter"
             android:background="#f25f72"
             android:src="@drawable/three"
