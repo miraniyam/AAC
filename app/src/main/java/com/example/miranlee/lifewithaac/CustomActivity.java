@@ -93,7 +93,6 @@ public class CustomActivity extends Activity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1){
-            Toast.makeText(getApplicationContext(),"AAC added",Toast.LENGTH_SHORT).show();
             //
             if(resultCode==RESULT_OK){ //넣기 성공
                 showList(); //목록보여주기

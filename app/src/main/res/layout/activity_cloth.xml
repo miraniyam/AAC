@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <HorizontalScrollView
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fadeScrollbars="false">
@@ -88,7 +89,8 @@
             android:layout_height="wrap_content"
             tools:context="com.example.miranlee.lifewithaac.MainActivity"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/red"
@@ -254,7 +256,8 @@
                     android:textAlignment="center"
                     android:gravity="center"
                     android:textSize="25dp"
-                    android:background="#ffffff"/>
+                    android:background="#ffffff"
+                    android:layout_marginBottom="15dp"/>
 
                     <Button
                         android:id="@+id/speak"
@@ -263,7 +266,9 @@
                         android:layout_height="80dp"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
+                        android:background="#FFD9EC"
                         android:text="말하기"
+                        android:layout_marginTop="10dp"
                         android:textSize="20dp"
                         />
 

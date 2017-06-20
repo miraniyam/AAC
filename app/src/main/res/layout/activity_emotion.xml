@@ -10,6 +10,7 @@
         tools:context="com.example.miranlee.lifewithaac.MainActivity"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         android:layout_weight="2">
         <ImageButton
             android:layout_width="50dp"
@@ -191,6 +192,7 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:text="말하기"
+        android:background="#FFD9EC"
         android:onClick="onSpeakClick"
         />
 

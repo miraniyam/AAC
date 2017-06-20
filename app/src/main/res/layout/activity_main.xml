@@ -15,16 +15,16 @@
         tools:context="com.example.miranlee.lifewithaac.MainActivity"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_weight="1">
+        >
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:src="@drawable/cloth"
             android:scaleType="fitCenter"
-            android:background="#548235"
-            android:layout_marginRight="15dp"
+            android:background="#CEF279"
+            android:layout_marginRight="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
@@ -32,13 +32,13 @@
             android:layout_weight="1"/>
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="#5b9bd5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B2CCFF"
             android:scaleType="fitCenter"
             android:src="@drawable/usedf"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:onClick="onRestaurantClick"
@@ -54,15 +54,15 @@
         tools:context="com.example.miranlee.lifewithaac.MainActivity"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_weight="1">
+       >
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="#f1890b"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFE08C"
             android:scaleType="fitCenter"
             android:src="@drawable/happy"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
@@ -70,13 +70,13 @@
             android:layout_weight="1"/>
 
         <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="#ff0101"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFC19E"
             android:scaleType="fitCenter"
             android:src="@drawable/game"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:onClick="onHospitalClick"
@@ -86,9 +86,9 @@
 
 
     <ImageButton
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#815b5b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFA7A7"
         android:scaleType="fitCenter"
         android:src="@drawable/sos"
         android:onClick="onSosClick"
@@ -98,8 +98,8 @@
 
     <ImageButton
         android:layout_margin="10dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#61799e"
         android:scaleType="fitCenter"
         android:src="@drawable/language"

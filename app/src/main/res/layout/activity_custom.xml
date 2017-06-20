@@ -13,18 +13,24 @@
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:id="@+id/myAACgrid"
-        android:numColumns="4"
+        android:numColumns="2"
         android:stretchMode="columnWidth"
-        android:layout_weight="1"
         android:verticalSpacing="5dp"
-        android:horizontalSpacing="5dp"/>
+        android:horizontalSpacing="5dp"
+        android:background="#ffffff"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="+"
+        android:background="#FFD9EC"
         android:id="@+id/cutomplus"
         android:layout_gravity="center"/>
 
