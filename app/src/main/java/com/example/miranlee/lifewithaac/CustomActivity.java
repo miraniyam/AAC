@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -38,11 +39,26 @@ public class CustomActivity extends Activity{
 
     ArrayList<AAC> aac = new ArrayList<AAC>();
 
+    String lang;
+    TextView tv;
+    int type = -1;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_custom);
         setTitle("myAAC");
         super.onCreate(savedInstanceState);
+
+        tv = (TextView)findViewById(R.id.main);
+        Intent i = getIntent();
+        lang = i.getStringExtra("lang");
+        if(lang.equals("korean")) {
+            type = 0;
+            tv.setText("나만의 AAC");
+        }else if(lang.equals("english")) {
+            type = 1;
+            tv.setText("My Own AAC");
+        }
 
         init();
 
@@ -80,6 +96,7 @@ public class CustomActivity extends Activity{
 
                 //추가ㅏ화면으로 넘어가기
                 Intent intent = new Intent(getApplicationContext(), CustomPlusActivity.class);
+                intent.putExtra("type",type);
                 startActivityForResult(intent,1);//requestcode==1
 
             }

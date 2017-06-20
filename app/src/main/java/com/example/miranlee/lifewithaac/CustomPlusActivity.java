@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -66,8 +67,10 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
     static Random rnd = new Random();
     static final String AB="abcdefghijklmnopqrstuvwxyz";
 
-
-
+    int type = -1;
+    TextView tvSelect;
+    TextView tvText;
+    TextView tvRecord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,22 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         super.onCreate(savedInstanceState);
         tts = new TextToSpeech(this,this);
         tts.setLanguage(Locale.KOREA);
+
+        tvSelect = (TextView)findViewById(R.id.tvSelect);
+        tvText = (TextView)findViewById(R.id.tvText);
+        tvRecord = (TextView)findViewById(R.id.tvRecord);
+
+        Intent i = getIntent();
+        type = i.getIntExtra("type",-1);
+        if(type == 0) {
+            tvSelect.setText("이미지를 선택하세요");
+            tvText.setText("텍스트");
+            tvRecord.setText("녹음");
+        }else if(type == 1) {
+            tvSelect.setText("Select Image");
+            tvText.setText("TEXT");
+            tvRecord.setText("RECORD");
+        }
 
         init();
 
@@ -92,6 +111,15 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         startbtn = (Button)findViewById(R.id.recordstartbtn);
         stopbtn = (Button)findViewById(R.id.recordstopbtn);
         playbtn = (Button)findViewById(R.id.recordplaybtn);
+        if(type == 0) {
+            startbtn.setText("시작");
+            stopbtn.setText("멈춤");
+            playbtn.setText("재생");
+        }else if(type == 1) {
+            startbtn.setText("START");
+            stopbtn.setText("STOP");
+            playbtn.setText("PLAY");
+        }
 
         stopbtn.setEnabled(false);
         playbtn.setEnabled(false);
@@ -122,6 +150,13 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
         imageView = (ImageView)findViewById(R.id.showimg);
         Button camerabtn = (Button)findViewById(R.id.camerabtn);
         Button albumbtn = (Button)findViewById(R.id.albumbtn);
+        if(type == 0) {
+            camerabtn.setText("카메라");
+            albumbtn.setText("갤러리");
+        }else if(type == 1) {
+            camerabtn.setText("CAMERA");
+            albumbtn.setText("ALBUM");
+        }
 
         //카메라 사진찍기
         camerabtn.setOnClickListener(new View.OnClickListener() {
@@ -208,14 +243,22 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
     }
 
     public void onClickStart(View view) {
-        tts.speak("이 멘트가 끝나면 녹음이 시작됩니다.",TextToSpeech.QUEUE_FLUSH,null);
+        if(type == 0) {
+            tts.speak("이 멘트가 끝나면 녹음이 시작됩니다.", TextToSpeech.QUEUE_FLUSH, null);
+        }else if(type == 1) {
+            tts.speak("Recording will start when this is stop",TextToSpeech.QUEUE_FLUSH,null);
+        }
         try {
             voiceStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath();
             File audioVoice = new File(voiceStoragePath+File.separator+"voice");
             if(!audioVoice.exists()){
                 audioVoice.mkdir();
                 if(!audioVoice.mkdir()){
-                    Toast.makeText(getApplicationContext(),"저장에 실패했습니다",Toast.LENGTH_SHORT).show();
+                    if(type == 0) {
+                        Toast.makeText(getApplicationContext(), "저장에 실패했습니다", Toast.LENGTH_SHORT).show();
+                    }else if(type == 1) {
+                        Toast.makeText(getApplicationContext(), "Failed to save", Toast.LENGTH_SHORT).show();
+                    }
                     return;
                 }
             }
@@ -246,7 +289,11 @@ public class CustomPlusActivity extends AppCompatActivity implements TextToSpeec
     public void onClickStop(View view) {
         recorder.stop();
         recorder.release();
-        tts.speak("녹음이 완료되었습니다",TextToSpeech.QUEUE_FLUSH,null);
+        if(type == 0) {
+            tts.speak("녹음이 완료되었습니다", TextToSpeech.QUEUE_FLUSH, null);
+        }else if(type == 1) {
+            tts.speak("Recording is done",TextToSpeech.QUEUE_FLUSH,null);
+        }
         startbtn.setEnabled(true);
         stopbtn.setEnabled(false);
         playbtn.setEnabled(true);

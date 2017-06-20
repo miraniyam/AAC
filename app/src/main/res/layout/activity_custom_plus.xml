@@ -13,6 +13,7 @@
         android:layout_marginBottom="10dp"/>-->
 
     <TextView
+        android:id="@+id/tvSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -53,6 +54,7 @@
         android:background="#ffffff"/>
 
     <TextView
+        android:id="@+id/tvText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -70,6 +72,7 @@
 
     <!--음성녹음-->
     <TextView
+        android:id="@+id/tvRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
